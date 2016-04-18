@@ -1,0 +1,159 @@
+<!-- ###TEMPLATE_FORM1### begin -->
+
+<div class="ce ce-request-form container cf">
+
+	<!--
+		<h1>###LLL:header_h1###</h1>
+		<p>###LLL:intro###</p>
+	-->
+	<div class="left-col">
+		<img src="typo3conf/ext/lj_templates/Resources/Public/img/kontakt-image.jpg">
+	</div>
+	<div class="right-col">
+		<form action="###REL_URL###" id="request-form" name="requestform" method="post" class="formhandler cf">
+
+			<div class="formhandler-row">
+				<span class="label">###LLL:salutation###<span class="mandatory-icon">*</span></span>
+				<input type="radio" name="formhandler[salutation]" id="salutation_mrs" value="Frau" checked> <label for="salutation_mrs">Frau&nbsp;&nbsp;&nbsp;</label>
+				<input type="radio" name="formhandler[salutation]" id="salutation_mr" value="Herr"> <label for="salutation_mr">Herr</label>
+			</div>
+			<div class="formhandler-row ###is_error_lastname###">
+				<label class="label">###LLL:lastname###<span class="mandatory-icon">*</span></label>
+				<input type="text" name="formhandler[lastname]" id="lastname" value="###value_lastname###" />
+			</div>
+			<div class="formhandler-row ###is_error_firstname###">
+				<label class="label">###LLL:firstname###<span class="mandatory-icon">*</span></label>
+				<input type="text" name="formhandler[firstname]" id="firstname" value="###value_firstname###" />
+			</div>
+			<div class="formhandler-row ###is_error_address###">
+				<label class="label">###LLL:address###<span class="mandatory-icon">*</span></label>
+				<input type="text" name="formhandler[address]" id="address" value="###value_address###" />
+			</div>
+			<div class="formhandler-row ###is_error_zip###">
+				<label class="label">###LLL:zip###<span class="mandatory-icon">*</span></label>
+				<input type="text" name="formhandler[zip]" id="zip" value="###value_zip###" />
+			</div>
+			<div class="formhandler-row ###is_error_city###">
+				<label class="label">###LLL:city###<span class="mandatory-icon">*</span></label>
+				<input type="text" name="formhandler[city]" id="city" value="###value_city###" />
+			</div>
+			<div class="formhandler-row ###is_error_phone###">
+				<label class="label">###LLL:phone###</label>
+				<input type="text" name="formhandler[phone]" id="phone" value="###value_phone###" />
+			</div>
+			<div class="formhandler-row ###is_error_email###">
+				<label class="label">###LLL:email###<span class="mandatory-icon">*</span></label>
+				<input type="text" name="formhandler[email]" id="email" value="###value_email###" />
+			</div>
+			<div class="formhandler-row formhandler-row-an-abreise ###is_error_email###">
+				<span class="label">###LLL:anreise###<span class="mandatory-icon">*</span></span>
+				<input type="text" name="formhandler[anreise]" id="anreise" value="###value_anreise###" />
+			</div>
+			<div class="formhandler-row formhandler-row-an-abreise ###is_error_email###">
+				<span class="label">###LLL:abreise###<span class="mandatory-icon">*</span></span>
+				<input type="text" name="formhandler[abreise]" id="abreise" value="###value_abreise###" />
+			</div>
+			<div class="formhandler-row formhandler-row-wide-label ###is_error_amount_adult###">
+				<span class="label">###LLL:amount_adult###<span class="mandatory-icon">*</span></span>
+				<select name="formhandler[amount_adult]" id="amount_adult" value="###value_amount_adult###" >
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+			<div class="formhandler-row formhandler-row-wide-label ###is_error_amount_kids###">
+				<span class="label">###LLL:amount_kids###</span>
+				<select name="formhandler[amount_kids_1]" id="amount_kids_1" >
+					<option value="--">--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+				</select>
+				<select name="formhandler[amount_kids_2]" id="amount_kids_2">
+					<option value="--">--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+				</select>
+				<select name="formhandler[amount_kids_3]" id="amount_kids_3">
+					<option value="--">--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+				</select>
+			</div>
+			<div class="formhandler-row">
+				<span class="label">###LLL:room###</span>
+				<input type="radio" name="formhandler[room]" id="room_single" value="Einzelzimmer" checked> <label for="room_single">###LLL:room_single###&nbsp;&nbsp;</label>
+				<input type="radio" name="formhandler[room]" id="room_double" value="Doppelzimmer"> <label for="room_double">###LLL:room_double###</label>
+			</div>
+			<div class="formhandler-row">
+				<span class="label">###LLL:holiday###</span>
+				<input type="radio" name="formhandler[holiday]" id="holiday_mf" value="mit Frühstück" checked> <label for="holiday_mf">###LLL:holiday_mf###&nbsp;&nbsp;</label>
+				<input type="radio" name="formhandler[holiday]" id="holiday_hp" value="Halbpension"> <label for="holiday_hp">###LLL:holiday_hp###</label><br>
+				<input type="radio" name="formhandler[holiday]" id="holiday_ov" value="ohne Verpflegung"> <label for="holiday_ov">###LLL:holiday_ov###</label>
+			</div>
+			<div class="formhandler-row formhandler-row-no-label">
+				<input type="radio" name="formhandler[type]" id="type_1" value="Ich wünsche ein unverbindliches Angebot" checked> <label for="type_1">###LLL:type_1###</label><br>
+				<input type="radio" name="formhandler[type]" id="type_2" value="Ich wünsche eine Buchung (wenn möglich)"> <label for="type_2">###LLL:type_2###</label>
+			</div>
+			<div class="formhandler-row row-message ###is_error_message###">
+				<label class="label">###LLL:text###</label>
+				<textarea name="formhandler[message]" id="message" >###value_message###</textarea>
+			</div>
+			<div class="formhandler-row submit">
+				<a class="submit btn-primary" href="javascript: document.requestform.submit();">
+					<span class="text">###LLL:submit###</span>
+				</a>
+			</div>
+		</form>
+	</div>
+</div>
+	<!-- ###TEMPLATE_FORM1### end -->
+
+<!-- ###TEMPLATE_SUBMITTEDOK### begin -->
+<div class="ce ce-request-form">
+	<p>###LLL:ok_message###</p>
+</div>
+<!-- ###TEMPLATE_SUBMITTEDOK### end -->

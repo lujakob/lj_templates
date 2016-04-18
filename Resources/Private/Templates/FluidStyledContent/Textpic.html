@@ -1,0 +1,177 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:switch expression="{data.layout}">
+	<f:case value="1">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} container">
+			<f:render partial="Header" arguments="{_all}" />
+			<f:render partial="MediaGallery" arguments="{_all}" />
+			<div class="text-content">
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</div>
+	</f:case>
+	<f:case value="2">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} container">
+			<f:render partial="Header" arguments="{_all}" />
+			<f:render partial="TeaserGallery" arguments="{_all}" />
+		</div>
+	</f:case>
+
+	<f:case value="3">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} container">
+			<div class="content">
+				<f:render partial="Header" arguments="{_all}" />
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</div>
+	</f:case>
+
+	<f:case value="4">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout}">
+			<f:render partial="Header" arguments="{_all}" />
+			<figure>
+				<img src="{v:variable.typoscript(path:'CONFIG.BASE_URL_LIVE')}{data.rowDescription}">
+			</figure>
+		</div>
+	</f:case>
+
+	<f:case value="5">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout}">
+			<figure>
+				<h3>{data.header}</h3>
+				<f:render partial="MediaGallery" arguments="{_all}" />
+			</figure>
+			<div class="content">
+				<f:format.html>{data.bodytext}</f:format.html>
+				<div class="buttons">
+					<f:if condition="{data.header_link}">
+						<f:link.page class="btn-primary" pageUid="{data.header_link}"><f:translate key="LLL:EXT:lj_templates/Resources/Private/Language/locallang.xlf:content.details" /></f:link.page>
+					</f:if>
+					<f:link.page class="btn-primary" pageUid="{v:variable.typoscript(path:'PIDS.BOOK')}"><f:translate key="LLL:EXT:lj_templates/Resources/Private/Language/locallang.xlf:content.book" /></f:link.page>
+				</div>
+			</div>
+		</div>
+	</f:case>
+
+	<f:case value="6">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} container cf">
+			<div class="top">{data.header}</div>
+			<div class="cf">
+				<figure>
+					<f:render partial="MediaGalleryBig" arguments="{_all}" />
+				</figure>
+				<div class="content">
+					<f:format.html>{data.bodytext}</f:format.html>
+					<div class="bottom">
+						<f:link.page class="btn-primary" pageUid="{v:variable.typoscript(path:'PIDS.BOOK')}">BUCHEN</f:link.page>
+						<f:link.page class="btn-primary" pageUid="{v:variable.typoscript(path:'PIDS.REQUEST')}">ANFRAGE</f:link.page>
+					</div>
+				</div>
+			</div>
+		</div>
+	</f:case>
+
+	<f:case value="7">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} cf" data-media-gallery>
+			<figure>
+				<f:render partial="MediaGallery" arguments="{_all}" />
+			</figure>
+		</div>
+	</f:case>
+
+	<f:case value="8">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} container">
+			<div class="cf">
+				<figure>
+					<div class="cf ce-slider">
+						<f:for each="{gallery.rows}" as="row">
+							<f:for each="{row.columns}" as="column">
+								<f:if condition="{column.media}">
+								<f:if condition="{data.image_zoom}">
+									<f:then>
+										<ce:link.clickEnlarge image="{column.media}" configuration="{settings.media.popup}">
+											<f:render section="media" arguments="{_all}" />
+										</ce:link.clickEnlarge>
+									</f:then>
+									<f:else>
+										<span>
+											<f:render section="media" arguments="{_all}" />
+										</span>
+									</f:else>
+								</f:if>
+								</f:if>
+							</f:for>
+						</f:for>
+					</div>
+				</figure>
+				<div class="content">
+					<div class="content-inner">
+						<f:render partial="Header" arguments="{_all}" />
+						<f:format.html>{data.bodytext}</f:format.html>
+					</div>
+				</div>
+			</div>
+		</div>
+	</f:case>
+
+	<f:case value="9">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} container">
+			<div class="cf ce-slider">
+				<f:for each="{gallery.rows}" as="row">
+					<f:for each="{row.columns}" as="column">
+						<f:if condition="{column.media}">
+							<f:if condition="{data.image_zoom}">
+								<f:then>
+									<ce:link.clickEnlarge image="{column.media}" configuration="{settings.media.popup}">
+										<f:render section="media" arguments="{_all}" />
+									</ce:link.clickEnlarge>
+								</f:then>
+								<f:else>
+								<span>
+									<f:render section="media" arguments="{_all}" />
+								</span>
+								</f:else>
+							</f:if>
+						</f:if>
+					</f:for>
+				</f:for>
+			</div>
+		</div>
+	</f:case>
+
+	<f:case default="true">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')} cf">
+			<f:if condition="{gallery.position.noWrap} != 1">
+				<f:render partial="Header" arguments="{_all}" />
+			</f:if>
+			<f:if condition="{gallery.position.vertical} != 'below'">
+				<f:render partial="MediaGallery" arguments="{_all}" />
+			</f:if>
+
+			<div class="ce-bodytext">
+				<f:if condition="{gallery.position.noWrap}">
+					<f:render partial="Header" arguments="{_all}" />
+				</f:if>
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+
+			<f:if condition="{gallery.position.vertical} == 'below'">
+				<f:render partial="MediaGallery" arguments="{_all}" />
+			</f:if>
+		</div>
+	</f:case>
+</f:switch>
+
+<f:section name="media">
+	<f:media
+		file="{column.media}"
+		width="{column.dimensions.width}"
+		height="{column.dimensions.height}"
+		alt="{column.media.alternative}"
+		title="{column.media.title}"
+		/>
+</f:section>
+
+</html>

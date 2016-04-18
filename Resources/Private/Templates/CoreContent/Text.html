@@ -1,0 +1,29 @@
+<div xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="text">
+			<f:render partial="Properties/Header" arguments="{_all}" />
+			<f:render partial="Properties/Container" arguments="{_all}" />
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		{record.bodytext -> f:format.crop(maxCharacters: settings.preview.maxCharacters, append: '') -> v:or(alternative: row.bodytext)}
+	</f:section>
+
+	<f:section name="Main">
+		<div class="ce ce-text">
+			<v:tag name="h{content.settings.header.type -> v:or(alternative: record.header_layout) -> v:or(alternative: settings.header.type)}"
+				   class="{content.settings.header.className}" hideIfEmpty="{content.settings.header.hideIfEmpty -> v:or(alternative: 1)}">
+				{record.header -> f:format.raw()}
+			</v:tag>
+
+			{record.bodytext -> f:format.html()}
+		</div>
+	</f:section>
+
+</div>

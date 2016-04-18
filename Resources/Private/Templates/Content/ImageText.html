@@ -1,0 +1,55 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="imageText" label="Bild und Text" options="{useTypoScript: 0, group: 'Eigene', Fluidcontent: {sorting: 100}, icon: '{f:uri.resource(path: \'Icons/Content/TeaserBox.png\')}'}">
+			<flux:form.sheet name="fullscreenImageSheetGeneral" label="Inhalte">
+				<flux:field.inline.fal name="settings.image" label="Bild" multiple="FALSE" maxItems="1" collapseAll="TRUE" />
+				<flux:field.text name="settings.bodytext" label="Text" enableRichText="true" />
+
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<div style="float:left; width:120px; margin-right:20px;">
+			<v:content.resources.fal field="settings.image" as="images">
+				<v:condition.type.isArray value="{images}">
+					<f:then>
+						<f:for each="{images}" as="image" iteration="iteration">
+							<v:media.image src="{image.url}" alt="{image.alternative}" width="120c" height="120c" />
+						</f:for>
+					</f:then>
+					<f:else>
+						<b>Please Create a Object in there</b>
+					</f:else>
+				</v:condition.type.isArray>
+
+			</v:content.resources.fal>
+		</div>
+		<br style="clear:both;">
+	</f:section>
+
+	<f:section name="Main">
+		<div class="ce-image-text cf {f:if(condition:'{0:settings.image} == {0:\'1\'}', then:' two-col')}">
+			<div class="image">
+				<v:content.resources.fal field="settings.image" as="images">
+					<f:for each="{images}" as="image" iteration="iteration">
+						<a href="{image.url}" class="lightbox">
+							<img src="{image.url}" alt="{image.alternative}" title="{image.title}" class="img-responsive" />
+						</a>
+					</f:for>
+				</v:content.resources.fal>
+			</div>
+			<div class="text">
+				<h2>{record.header}</h2>
+				<f:format.html>{settings.bodytext}</f:format.html>
+			</div>
+		</div>
+	</f:section>
+
+</div>

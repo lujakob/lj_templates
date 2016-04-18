@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+	<div class="thumbs cf">
+		<f:for each="{gallery.rows}" as="row">
+			<f:for each="{row.columns}" as="column">
+				<f:if condition="{column.media}">
+					<div class="thumb-item">
+						<f:media
+							file="{column.media}"
+							width="{column.dimensions.width}"
+							height="{column.dimensions.height}"
+							alt="{column.media.alternative}"
+							title="{column.media.title}"
+							/>
+					</div>
+				</f:if>
+			</f:for>
+		</f:for>
+	</div>
+</f:if>
+
+</html>

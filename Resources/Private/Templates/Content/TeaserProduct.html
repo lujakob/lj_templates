@@ -1,0 +1,50 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="teaserProduct" label="Teaser Produkt" options="{useTypoScript: 0, group: 'Eigene', Fluidcontent: {sorting: 100}, icon: '{f:uri.resource(path: \'Icons/Content/TeaserBox.png\')}'}">
+			<flux:form.sheet name="teaserProductSheetGeneral" label="Inhalte">
+				<flux:field.inline.fal name="settings.image" label="Bild" multiple="FALSE" maxItems="1" collapseAll="TRUE" />
+				<flux:field.select name="settings.index" label="Produktposition" items="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20" />
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<div style="float:left; width:120px; margin-right:20px;">
+			<v:content.resources.fal field="settings.image" as="images">
+				<v:condition.type.isArray value="{images}">
+					<f:then>
+						<f:for each="{images}" as="image" iteration="iteration">
+							<v:media.image src="{image.url}" alt="{image.alternative}" width="120c" height="120c" />
+						</f:for>
+					</f:then>
+					<f:else>
+						<b>Please Create a Object in there</b>
+					</f:else>
+				</v:condition.type.isArray>
+
+			</v:content.resources.fal>
+		</div>
+		<div style="float:left;">
+			<b>Home Teaser</b><br>
+		</div>
+		<br style="clear:both;">
+	</f:section>
+
+	<f:section name="Main">
+		<div class="teaser-item product" data-index="{settings.index}">
+			<v:content.resources.fal field="settings.image" as="images">
+				<f:for each="{images}" as="image" iteration="iteration">
+					<img src="{image.url}" alt="{image.alternative}" title="{image.title}" class="img-responsive" />
+				</f:for>
+			</v:content.resources.fal>
+			<div class="teaser-title">{record.header}</div>
+		</div>
+	</f:section>
+
+</div>

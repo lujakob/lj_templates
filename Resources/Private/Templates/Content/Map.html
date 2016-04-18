@@ -1,0 +1,56 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="map" label="Google Map" options="{useTypoScript: 0, group: 'Eigene', Fluidcontent: {sorting: 100}, icon: '{f:uri.resource(path: \'Icons/Content/TeaserBox.png\')}'}">
+			<flux:form.sheet name="mapSheetGeneral" label="Allgemein" >
+				<flux:field.input name="settings.header" label="Überschrift groß" />
+				<flux:field.text name="settings.map" label="Google Map" />
+				<flux:field.text name="settings.bodytext1" label="Text links" enableRichText="true" />
+				<flux:field.text name="settings.bodytext2" label="Text mitte" enableRichText="true" />
+				<flux:field.text name="settings.bodytext3" label="Text rechts" enableRichText="true" />
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<b>{settings.header}</b>
+		<br>
+		<div style="width:30%; float:left; padding:0 10px;">{settings.bodytext1 -> f:format.crop(maxCharacters:100)}</div>
+		<div style="width:30%; float:left; padding:0 10px;">{settings.bodytext2 -> f:format.crop(maxCharacters:100)}</div>
+		<div style="width:30%; float:left; padding:0 10px;">{settings.bodytext3 -> f:format.crop(maxCharacters:100)}</div>
+		<br style="clear:both;">
+	</f:section>
+
+	<f:section name="Main">
+		<div class="ce ce-map cf">
+			<h2><f:format.html parseFuncTSPath="">{record.header}</f:format.html></h2>
+			<h1><f:format.html parseFuncTSPath="">{settings.header}</f:format.html></h1>
+			<div class="ce-content-container cf">
+				<f:if condition="{settings.bodytext1}">
+					<div class="left-col">
+						<f:format.html>{settings.bodytext1}</f:format.html>
+					</div>
+				</f:if>
+				<f:if condition="{settings.bodytext2}">
+					<div class="middle-col">
+						<f:format.html>{settings.bodytext2}</f:format.html>
+					</div>
+				</f:if>
+				<f:if condition="{settings.bodytext3}">
+					<div class="right-col">
+						<f:format.html>{settings.bodytext3}</f:format.html>
+					</div>
+				</f:if>
+			</div>
+			<div class="google-map">
+				<f:format.raw>{settings.map}</f:format.raw>
+			</div>
+		</div>
+	</f:section>
+
+</div>

@@ -1,0 +1,42 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="imageIcon" label="Promotion Icon Home" options="{useTypoScript: 0, group: 'Eigene', Fluidcontent: {sorting: 100}, icon: '{f:uri.resource(path: \'Icons/Content/TeaserBox.png\')}'}">
+			<flux:form.sheet name="imageIconSheetGeneral" label="Text">
+				<flux:field.text name="settings.text1" label="Text 1" enableRichText="false" />
+				<flux:field.text name="settings.text2" label="Text 2" enableRichText="false" />
+				<flux:field.input name="settings.bgColor" label="Hintergrundfarbe" />
+				<flux:field.input name="settings.link" label="Link">
+					<flux:wizard.link label="Link" activeTab="page"/>
+				</flux:field.input>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<div class="text-1">
+			<f:format.raw>{settings.text1}</f:format.raw>
+		</div>
+		<div class="text-2">
+			<f:format.raw>{settings.text1}</f:format.raw>
+		</div>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="ce-image-icon bg-color{settings.bgColor}">
+			<f:link.page pageUid="{settings.link}">
+			<div class="text-1">
+				<f:format.raw>{settings.text1}</f:format.raw>
+			</div>
+			<div class="text-2">
+				<f:format.raw>{settings.text2}</f:format.raw>
+			</div>
+			</f:link.page>
+		</div>
+	</f:section>
+</div>

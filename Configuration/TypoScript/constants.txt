@@ -1,0 +1,90 @@
+# settings for live environment (baseUrl, cache, etc)
+CONFIG {
+    BASE_URL = http://www.yourdomain.de/
+    NO_CACHE = 0
+    SOURCEOPT.FORMAT_HTML = 1
+}
+
+# settings for local environment (baseUrl, cache, etc)
+[globalString = IENV:HTTP_HOST  = zettler.local]
+    CONFIG {
+        BASE_URL = http://zettler.local/
+        NO_CACHE = 0
+        SOURCEOPT.FORMAT_HTML = 1
+    }
+[global]
+
+# set page ids, links, urls - constants
+# access constants in templates with vhs viewhelper {v:variable.typoscript(path:'PIDS.ROOT')} (make sure vhs namespace is intruduced with {namespace v=FluidTYPO3\Vhs\ViewHelpers} at the top)
+PIDS {
+    ROOT = 1
+    META = 2
+}
+
+URL {
+    FACEBOOK = http://www.facebook.com
+}
+
+PHONE =
+
+# formhandler
+# (email constants are overridden in TS Main Template)
+
+FORMULAR {
+    ANFRAGE {
+        ADMIN {
+            TO_EMAIL = info@domain.de
+            TO_NAME = your name
+            SUBJECT = your subject
+            SENDER_EMAIL = info@domain.de
+            REPLYTO_EMAIL = info@domain.de
+            REPLYTO_NAME = info@domain.de
+        }
+        USER {
+            TO_EMAIL = email
+            TO_NAME = your name
+            SUBJECT = your subject
+            SENDER_EMAIL = info@domain.de
+            REPLYTO_EMAIL = info@domain.de
+            REPLYTO_NAME = info@domain.de
+        }
+    }
+}
+
+# set rte external link target default to "_blank"
+styles.content.links.extTarget = _blank
+
+# use ext:seo_basics to set custom page titles
+# replace FIXED PART with your website name
+plugin.tx_seo.titleWrap = || - FIXED PART|
+plugin.tx_seo.titleWrapAppendSiteTitle = 1
+
+# tt_content styles
+styles {
+    # replace FluidStyledContent templates with custom templates of this provider ext
+    templates {
+        layoutRootPath  = EXT:lj_templates/Resources/Private/Layouts/FluidStyledContent/
+        templateRootPath = EXT:lj_templates/Resources/Private/Templates/FluidStyledContent/
+        partialRootPath = EXT:lj_templates/Resources/Private/Partials/FluidStyledContent/
+    }
+    content {
+        textmedia {
+            # if extension loading order of sysext:fluid_styled_contents and lj_templates is wrong, these values are not working
+            # if so, set them in typo3 backend main typoscript template constants
+
+            # textmedia image max width
+            maxWidth = 1200
+            maxWidthInText = 1200
+
+            # clickenlarge use lightbox style
+            linkWrap {
+                lightboxEnabled = 1
+                lightboxRelAttribute = magnificpopup[{field:uid}]
+            }
+        }
+        imgtext {
+            maxWInText = 1200
+            maxW = 1200
+        }
+    }
+}

@@ -1,0 +1,140 @@
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixel you want to convert
+ *
+ * e.g. p {@include fontSize(12px);}
+ *
+ */
+/* full clearfix */
+/* add to floating elements which shall clear floating after themselves */
+/* line 3, ../sass/_reset.scss */
+* html .cf2 {
+  height: 1%;
+  /* IE5-6 */
+}
+
+/* line 4, ../sass/_reset.scss */
+* + html .cf2 {
+  display: inline-block;
+  /* IE7not8 */
+}
+
+/* line 5, ../sass/_reset.scss */
+.cf2:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  /* FF, IE8, O, S, etc. */
+}
+
+/* line 7, ../sass/_reset.scss */
+.cf:before, .cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 8, ../sass/_reset.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 9, ../sass/_reset.scss */
+.cf {
+  *zoom: 1;
+}
+
+/* line 11, ../sass/_reset.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 15, ../sass/_reset.scss */
+body {
+  font-family: verdana;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  margin: 0;
+}
+
+/* line 20, ../sass/_reset.scss */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 25, ../sass/_reset.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 28, ../sass/_reset.scss */
+figure, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* line 32, ../sass/_reset.scss */
+img {
+  vertical-align: middle;
+}
+
+/* line 35, ../sass/_reset.scss */
+td {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 44, ../sass/_reset.scss */
+.float-left {
+  float: left !important;
+}
+
+/* line 47, ../sass/_reset.scss */
+.float-right {
+  float: right !important;
+}
+
+/* line 51, ../sass/_reset.scss */
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 4, ../sass/_grid.scss */
+body {
+  font-family: Helvetica Neue, Helvetica, Sans-Serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 26px;
+  background-color: #fff;
+}
+
+/* line 12, ../sass/_grid.scss */
+#wrapper .nav-main-container {
+  float: left;
+  width: 200px;
+}
+/* line 16, ../sass/_grid.scss */
+#wrapper #main {
+  float: left;
+  min-width: 600px;
+}
+
+/* line 2, ../sass/_navigation.scss */
+nav ul {
+  margin-left: 10px;
+}
+/* line 8, ../sass/_navigation.scss */
+nav .box-second-level {
+  margin-left: 25px;
+}

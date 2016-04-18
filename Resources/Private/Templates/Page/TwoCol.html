@@ -1,0 +1,44 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+	<!-- Fields for Page Properties (as Flexform) -->
+	<flux:form id="default" label="Inhalt (2-spaltig)" options="{icon: '../typo3conf/ext/lj_templates/Resources/Public/Icons/Page/Standard.gif'}"></flux:form>
+
+	<!-- Backend-Layout -->
+	<flux:grid>
+		<flux:grid.row>
+			<flux:grid.column colPos="2" colspan="3" name="top" label="Inhalt oben" />
+		</flux:grid.row>
+		<flux:grid.row>
+			<flux:grid.column colPos="0" name="center" colspan="2" label="Inhalt mitte" />
+			<flux:grid.column colPos="1" name="right" label="Inhalt rechts" />
+		</flux:grid.row>
+	</flux:grid>
+</f:section>
+
+<f:section name="Preview">
+	<flux:widget.grid />
+</f:section>
+
+<f:section name="Content">
+	<div id="main" class="two-col">
+		<section class="grid-top container">
+			<v:content.render column="2" />
+		</section>
+		<section class="grid-two-col cf container">
+			<div class="col-left">
+				<v:content.render column="0" />
+			</div>
+			<div class="col-right">
+				<v:content.render column="1" />
+			</div>
+		</section>
+	</div>
+</f:section>
+
+<f:section name="Visual">
+	<f:cObject typoscriptObjectPath="lib.backgroundImage" />
+</f:section>

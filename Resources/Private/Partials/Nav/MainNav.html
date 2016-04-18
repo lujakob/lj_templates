@@ -1,0 +1,24 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="nav-main-container">
+	<nav>
+		<v:page.menu.directory pages="{v:variable.typoscript(path:'PIDS.ROOT')}">
+			<ul class="box-first-level cf">
+				<f:for each="{menu}" as="menuPage" iteration="iteration">
+					<li class="{menuPage.class}" id="page-id-{menuPage.uid}">
+						<a href="{menuPage.link}">{menuPage.title}</a>
+						<f:if condition="{menuPage.hasSubPages}">
+							<ul class="box-second-level">
+								<v:page.menu pageUid="{menuPage.uid}" classActive="active" as="submenu">
+									<f:for each="{submenu}" as="subMenuPage">
+										<li><a class="{subMenuPage.class}" href="{subMenuPage.link}">{subMenuPage.title}</a></li>
+									</f:for>
+								</v:page.menu>
+							</ul>
+						</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</v:page.menu.directory>
+	</nav>
+</div>

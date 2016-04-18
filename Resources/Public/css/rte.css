@@ -1,0 +1,33 @@
+td {
+	vertical-align:top;
+	border:1px dotted grey;
+	padding:2px;
+}
+span.font-20 {
+	font-size:20px;
+}
+span.font-24 {
+	font-size:24px;
+}
+
+span.bigger-font {
+	font-size:18px;
+}
+
+span.smaller-font {
+	font-size:12px;
+}
+
+span.brown {
+	color:#5f3812;
+}
+
+p.align-right {
+	text-align:right;
+}
+p.align-center {
+	text-align:center;
+}
+p.smaller-font {
+	font-size:12px;
+}

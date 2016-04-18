@@ -1,0 +1,54 @@
+/* full clearfix */
+/* add to floating elements which shall clear floating after themselves */
+* html .cf2 {height: 1%; /* IE5-6 */ }
+*+html .cf2 {display: inline-block; /* IE7not8 */ }
+.cf2:after { content: ".";display: block;height: 0;clear: both;visibility: hidden; /* FF, IE8, O, S, etc. */ }
+
+.cf:before, .cf:after { content: " "; /* 1 */ display: table; /* 2 */ }
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family:verdana;
+    @include fontSize(13px);
+	margin:0;
+}
+ul {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+a {
+	text-decoration: none;
+}
+figure,h1,h2,h3,h4,h5,h6,p {
+	margin:0;
+    font-weight:normal;
+}
+img {
+    vertical-align: middle;
+}
+td {
+    vertical-align: top;
+    padding:0;
+    margin:0;
+    border:none;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+.float-left {
+    float:left !important;
+}
+.float-right {
+    float:right !important;
+}
+
+figure img {
+    width:100%;
+    height:auto;
+}

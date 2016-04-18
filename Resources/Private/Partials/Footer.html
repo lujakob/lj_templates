@@ -1,0 +1,23 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<div class="footer-cols cf">
+	<div class="footer-col-right">
+		<f:format.html parseFuncTSPath="lib.parseFunc">
+			<f:cObject typoscriptObjectPath="lib.footerRight" />
+		</f:format.html>
+	</div>
+	<div class="footer-col-left1">
+		<f:format.html parseFuncTSPath="lib.parseFunc">
+			<f:cObject typoscriptObjectPath="lib.footerLeft1" />
+		</f:format.html>
+	</div>
+	<div class="footer-col-left2">
+		<a href="{v:variable.typoscript(path:'URL.FACEBOOK')}" class="facebook-btn"><f:translate key="facebook" /></a>
+		<a href="{v:variable.typoscript(path:'URL.GOOGLE')}" class="google-btn"><f:translate key="googleplus" /></a>
+	</div>
+</div>
+<nav class="nav-meta">
+	<f:render partial="Nav/MetaNav" arguments="{entryPid: '{v:variable.typoscript(path:\'PIDS.META\')}'}" />
+	<f:link.page class="ruecktritt-btn" pageUid="{v:variable.typoscript(path:'PIDS.RUECKTRITT')}"><v:page.info pageUid="{v:variable.typoscript(path:'PIDS.RUECKTRITT')}" field="title" /></f:link.page>
+	<div class="designed">Designed by <a href="http://www.kuhstadl.com" target="_blank">Kuhstadl</a></div>
+</nav>
+<f:link.page class="request-btn" pageUid="{v:variable.typoscript(path:'PIDS.BOOK')}">Suchen und Buchen</f:link.page>

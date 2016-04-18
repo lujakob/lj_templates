@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:switch expression="{data.layout}">
+	<f:case value="0">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout}">
+			<div class="ce-container cf">
+				<div class="header cf">
+					<f:render partial="Header" arguments="{_all}" />
+				</div>
+				<div class="col-left">
+					<f:if condition="{data.header_link}">
+						<f:then>
+							<f:link.page pageUid="{data.header_link}">
+								<f:render partial="MediaGallery" arguments="{_all}" />
+							</f:link.page>
+						</f:then>
+						<f:else>
+							<f:render partial="MediaGallery" arguments="{_all}" />
+						</f:else>
+					</f:if>
+				</div>
+
+				<div class="col-right">
+					<f:format.html>{data.bodytext}</f:format.html>
+					<f:if condition="{data.header_link}">
+						<f:link.page class="read-more" pageUid="{data.header_link}">READ MORE</f:link.page>
+					</f:if>
+				</div>
+			</div>
+		</div>
+	</f:case>
+
+	<f:case default="true">
+		<div id="c{data.uid}" class="ce ce-textpic layout-{data.layout} ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')} cf">
+			<f:if condition="{gallery.position.noWrap} != 1">
+				<f:render partial="Header" arguments="{_all}" />
+			</f:if>
+			<f:if condition="{gallery.position.vertical} != 'below'">
+				<f:render partial="MediaGallery" arguments="{_all}" />
+			</f:if>
+
+			<div class="ce-bodytext">
+				<f:if condition="{gallery.position.noWrap}">
+					<f:render partial="Header" arguments="{_all}" />
+				</f:if>
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+
+			<f:if condition="{gallery.position.vertical} == 'below'">
+				<f:render partial="MediaGallery" arguments="{_all}" />
+			</f:if>
+		</div>
+	</f:case>
+</f:switch>
+
+</html>

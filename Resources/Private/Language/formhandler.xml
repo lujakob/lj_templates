@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Language labels for Disable Submit Form</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="greetings">Hello</label>
+            <label index="company">Company</label>
+            <label index="firstname">Firstname</label>
+            <label index="lastname">Lastname</label>
+            <label index="salutation">Salutation</label>
+            <label index="address">Address</label>
+            <label index="city">City</label>
+            <label index="country">Country</label>
+            <label index="phone">Phone</label>
+            <label index="message">Message</label>
+            <label index="submit">Send</label>
+            <label index="email">E-Mail</label>
+            <label index="necessary">* required fields</label>
+
+            <label index="error_firstname_required">Please enter your firstname!</label>
+            <label index="error_lastname_required">Please enter your lastname!</label>
+            <label index="error_address_required">Please enter your address!</label>
+            <label index="error_city_required">Please enter your city!</label>
+            <label index="error_country_required">Please enter your country!</label>
+            <label index="error_phone_required">Please enter your phone!</label>
+            <label index="error_email_required">Please enter your email!</label>
+            <label index="error_message_required">Please enter your message!</label>
+        </languageKey>
+
+        <languageKey index="de" type="array">
+            <label index="header_h1">UNVERBINDLICHE ANFRAGE</label>
+            <label index="intro">Füllen Sie bitte alle unten angezeigten Felder aus, wir melden uns dann schnellstmöglichst bei Ihnen.</label>
+
+            <label index="greetings">Hallo</label>
+            <label index="salutation">Anrede</label>
+            <label index="product">Produkt</label>
+            <label index="text">Text</label>
+            <label index="textlimit">(max 750 Zeichen)</label>
+            <label index="firstname">Vorname</label>
+            <label index="lastname">Nachname</label>
+            <label index="address">Adresse</label>
+            <label index="city">Stadt</label>
+            <label index="zip">PLZ</label>
+            <label index="country">Land</label>
+            <label index="phone">Telefon</label>
+            <label index="message">Ihre Nachricht</label>
+            <label index="submit">ANFRAGEN</label>
+
+            <label index="anreise">Anreise</label>
+            <label index="abreise">Abreise</label>
+            <label index="amount_adult">Anzahl Erwachsener</label>
+            <label index="amount_kids">Anzahl Kinder/Alter</label>
+            <label index="room">Zimmer</label>
+            <label index="room_single">Einzelzimmer</label>
+            <label index="room_double">Doppelzimmer</label>
+            <label index="holiday">Ferienwohnung</label>
+            <label index="holiday_mf">mit Frühstück</label>
+            <label index="holiday_hp">mit HP</label>
+            <label index="holiday_ov">ohne Verpflegung</label>
+            <label index="type"></label>
+            <label index="type_1">Ich wünsche ein unverbindliches Angebot</label>
+            <label index="type_2">Ich wünsche eine Buchung (wenn möglich)</label>
+
+            <label index="email">E-Mail</label>
+            <label index="ok_message">Ihre Anfrage wurde erfolgreich abgesendet. Wir werden uns umgehend bei Ihnen melden.</label>
+
+
+            <label index="necessary">* Eingabe erforderlich</label>
+
+
+            <label index="error_firstname_required">Bitte füllen Sie den Vornamen aus!</label>
+            <label index="error_lastname_required">Bitte füllen Sie den Nachnamen aus!</label>
+            <label index="error_address_required">Bitte füllen Sie die Adresse aus!</label>
+            <label index="error_zip_required">Bitte füllen Sie die PLZ aus!</label>
+            <label index="error_city_required">Bitte füllen Sie die Stadt aus!</label>
+            <label index="error_country_required">Bitte füllen Sie das Land aus!</label>
+            <label index="error_phone_required">Bitte füllen Sie das Telefon aus!</label>
+            <label index="error_email_required">Bitte füllen Sie die Email aus!</label>
+            <label index="error_message_required">Bitte füllen Sie die Nachricht aus!</label>
+        </languageKey>
+    </data>
+</T3locallang>

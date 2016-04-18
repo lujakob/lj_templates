@@ -1,0 +1,23 @@
+body, html {
+
+}
+body {
+    font-family: Helvetica Neue, Helvetica, Sans-Serif;
+    @include fontSize(14px);
+    line-height:26px;
+    background-color:#fff;
+}
+
+#wrapper {
+  .nav-main-container {
+    float:left;
+    width:200px;
+  }
+  #main {
+    float:left;
+    min-width:600px;
+  }
+}
+
+
+

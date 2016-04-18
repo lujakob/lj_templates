@@ -1,0 +1,20 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<v:page.menu.directory pages="{pageUids}">
+	<ul class="ce-menu ce-menu-1">
+		<f:for each="{menu}" as="menuPage" iteration="iteration">
+			<li class="{menuPage.class}">
+				<f:if condition="{menuPage.nav_title}">
+					<f:then>
+						<f:link.page pageUid="{menuPage.uid}">{menuPage.nav_title}</f:link.page>
+					</f:then>
+					<f:else>
+						<f:link.page pageUid="{menuPage.uid}">{menuPage.title}</f:link.page>
+					</f:else>
+				</f:if>
+			</li>
+		</f:for>
+	</ul>
+</v:page.menu.directory>
+</html>

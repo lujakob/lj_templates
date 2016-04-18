@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-27T09:28:56Z" product-name="lj_templates">
+		<header/>
+		<body>
+            <!-- ImageGallery.html -->
+            <trans-unit id="flux.imgGallery.description" xml:space="preserve">
+                <source>Responsive Image Gallery</source>
+            </trans-unit>
+            <trans-unit id="flux.fullscreenImageSheetGeneral" xml:space="preserve">
+                <source>Inhalte</source>
+            </trans-unit>
+            
+            <trans-unit id="flux.imgGallery" xml:space="preserve">
+                <source>Image Gallery</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.sheets.imgGallerySheetImages" xml:space="preserve">
+                <source>Images</source>
+            </trans-unit>
+            <trans-unit id="flux.teaserBox.description" xml:space="preserve">
+                <source>Teaserbox mit Überschrift, Bild, Link</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.sheets.imgGallerySheetAdvanced" xml:space="preserve">
+                <source>Advanced</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalImageItems" xml:space="preserve">
+                <source>Images</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalClassesModal" xml:space="preserve">
+                <source>Custom CSS Class</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalShowPreviewTitle" xml:space="preserve">
+                <source>Show Title in Preview</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalRenderHrefToOriginal" xml:space="preserve">
+                <source>Render Link Href Attribut to original image</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalPrevNextPosition" xml:space="preserve">
+                <source>Postition of Prev-Next</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalImageWidth" xml:space="preserve">
+                <source>Size of Preview Image</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalRowLg" xml:space="preserve">
+                <source>Images in a row - Large Screen</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalRowMd" xml:space="preserve">
+                <source>Images in a row - Small Screen</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalRowSm" xml:space="preserve">
+                <source>Images in a row - Tablet</source>
+            </trans-unit>
+            <trans-unit id="flux.imgGallery.fields.settings.imgGalleryFalRowXs" xml:space="preserve">
+                <source>Images in a row - Phones</source>
+            </trans-unit>
+            <!-- /ImageGallery.html -->
+
+            <!-- /TeaserBox.html -->
+            <trans-unit id="flux.teaserBox" xml:space="preserve">
+                <source>Teaser Box</source>
+            </trans-unit>
+            <trans-unit id="flux.teaserBox.sheets.teaserBoxSheetGeneral" xml:space="preserve">
+                <source>Allgemein</source>
+            </trans-unit>
+            <trans-unit id="flux.teaserBox.fields.settings.teaserBoxHeader" xml:space="preserve">
+                <source>Überschrift</source>
+            </trans-unit>
+            <trans-unit id="flux.teaserBox.fields.settings.teaserBoxLink" xml:space="preserve">
+                <source>Link</source>
+            </trans-unit>
+            <trans-unit id="flux.teaserBox.fields.settings.teaserBoxFalImage" xml:space="preserve">
+                <source>Link</source>
+            </trans-unit>
+
+            <!-- /AccordionBox.html -->
+            <trans-unit id="flux.accordionBox" xml:space="preserve">
+                <source>Teaser Box</source>
+            </trans-unit>
+            <trans-unit id="flux.accordionBox.sheets.accordionBoxSheetGeneral" xml:space="preserve">
+                <source>Allgemein</source>
+            </trans-unit>
+            <trans-unit id="flux.accordionBox.fields.settings.accordionBoxHeader" xml:space="preserve">
+                <source>Überschrift</source>
+            </trans-unit>
+            <trans-unit id="flux.accordionBox.fields.settings.teaserBoxContent" xml:space="preserve">
+                <source>Inhalt</source>
+            </trans-unit>
+
+            <!-- /AccordionBox.html -->
+            <trans-unit id="flux.map" xml:space="preserve">
+                <source>Google Map</source>
+            </trans-unit>
+            <trans-unit id="flux.map.sheets.accordionBoxSheetGeneral" xml:space="preserve">
+                <source>Allgemein</source>
+            </trans-unit>
+
+            <!-- /Slider.html -->
+            <trans-unit id="flux.slider" xml:space="preserve">
+                <source>Slider</source>
+            </trans-unit>
+            <trans-unit id="flux.slider.sheets.sliderSheetGeneral" xml:space="preserve">
+                <source>Allgemein</source>
+            </trans-unit>
+            <trans-unit id="flux.slider.objects.sliderItem" xml:space="preserve">
+                <source>Sliderelemente</source>
+            </trans-unit>
+            <trans-unit id="flux.slider.objects.sliderItem.sliderHeader" xml:space="preserve">
+                <source>Überschrift</source>
+            </trans-unit>
+            <trans-unit id="flux.slider.objects.sliderItem.sliderImage" xml:space="preserve">
+                <source>Bild</source>
+            </trans-unit>
+
+            <!-- /Slider.html -->
+
+            <!-- /News/List.html -->
+            <trans-unit id="news.more-link" xml:space="preserve">
+                <source>mehr lesen</source>
+            </trans-unit>
+            <!-- /News/List.html -->
+
+            <trans-unit id="facebook" xml:space="preserve">
+                <source>facebook</source>
+            </trans-unit>
+            <trans-unit id="googleplus" xml:space="preserve">
+                <source>google plus</source>
+            </trans-unit>
+            <trans-unit id="header.contact" xml:space="preserve">
+                <source>wir beraten sie gerne, rufen sie uns an: </source>
+            </trans-unit>
+            <trans-unit id="content.book" xml:space="preserve">
+                <source>Buchen</source>
+            </trans-unit>
+            <trans-unit id="content.request" xml:space="preserve">
+                <source>Anfragen</source>
+            </trans-unit>
+            <trans-unit id="content.price" xml:space="preserve">
+                <source>Preise</source>
+            </trans-unit>
+            <trans-unit id="content.details" xml:space="preserve">
+                <source>Details</source>
+            </trans-unit>
+
+		</body>
+	</file>
+</xliff>

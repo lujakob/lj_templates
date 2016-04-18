@@ -1,0 +1,8 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<v:page.menu.directory pages="{entryPid}">
+	<ul class="box-first-level cf">
+		<f:for each="{menu}" as="menuPage" iteration="iteration">
+			<li class="{menuPage.class}" id="page-id-{menuPage.uid}"><a href="{menuPage.link}">{menuPage.title}</a></li>
+		</f:for>
+	</ul>
+</v:page.menu.directory>

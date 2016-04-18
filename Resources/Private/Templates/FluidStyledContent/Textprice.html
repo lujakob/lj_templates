@@ -1,0 +1,45 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:switch expression="{data.layout}">
+	<f:case value="1">
+		Layout 1 has no rendering definition in html template.
+	</f:case>
+
+	<f:case default="true">
+		<div id="c{data.uid}" class="ce ce-textprice layout-{data.layout} container cf" data-media-gallery>
+			<div class="top">{data.header}</div>
+			<div class="big"></div>
+			<div class="content-wrap cf">
+				<figure>
+					<f:render partial="MediaGalleryRoom" arguments="{_all}" />
+				</figure>
+				<div class="content">
+					<f:format.html>{data.bodytext}</f:format.html>
+					<div class="bottom">
+						<button class="price-btn"><f:translate key="LLL:EXT:lj_templates/Resources/Private/Language/locallang.xlf:content.price" /></button>
+						<f:link.page class="btn-primary" pageUid="{v:variable.typoscript(path:'PIDS.BOOK')}"><f:translate key="LLL:EXT:lj_templates/Resources/Private/Language/locallang.xlf:content.book" /></f:link.page>
+						<f:link.page class="btn-primary" pageUid="{v:variable.typoscript(path:'PIDS.REQUEST')}"><f:translate key="LLL:EXT:lj_templates/Resources/Private/Language/locallang.xlf:content.request" /></f:link.page>
+					</div>
+				</div>
+			</div>
+			<div class="price-list cf">
+				<div class="price-col">
+					<f:format.html parseFuncTSPath="">{data.tx_stuben_price_1}</f:format.html>
+				</div>
+				<div class="price-col">
+					<f:format.html parseFuncTSPath="">{data.tx_stuben_price_2}</f:format.html>
+				</div>
+				<div class="price-col">
+					<f:format.html parseFuncTSPath="">{data.tx_stuben_price_3}</f:format.html>
+				</div>
+				<div class="price-col">
+					<f:format.html parseFuncTSPath="">{data.tx_stuben_price_4}</f:format.html>
+				</div>
+			</div>
+		</div>
+	</f:case>
+</f:switch>
+
+</html>

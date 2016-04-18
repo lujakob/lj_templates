@@ -1,0 +1,14 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<div id="header" class="cf">
+	<div id="logo">
+		<f:cObject typoscriptObjectPath="lib.logo" />
+	</div>
+	<div id="meta">
+		{v:variable.typoscript(path:'PHONE')}
+	</div>
+</div>
+
+<div id="wrapper" class="cf">
+	<f:render partial="Nav/MainNav" />
+	<f:render section="Content" />
+</div>
