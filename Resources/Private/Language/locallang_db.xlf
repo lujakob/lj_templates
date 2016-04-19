@@ -3,9 +3,19 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-27T09:28:56Z" product-name="lj_templates">
 		<header/>
 		<body>
-			<trans-unit id="pages.tx_stuben_room_number">
-				<source>Raumnummer</source>
+			<trans-unit id="tt_content.tx_ljtemplates_bodytext_columns">
+				<source>Text Spalten</source>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_ljtemplates_bodytext_columns.I.1">
+				<source>einspaltig</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_ljtemplates_bodytext_columns.I.2">
+				<source>zweispaltig</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_ljtemplates_bodytext_columns.I.3">
+				<source>dreispaltig</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

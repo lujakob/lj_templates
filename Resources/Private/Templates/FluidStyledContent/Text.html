@@ -2,7 +2,9 @@
 
 <div id="c{data.uid}" class="ce ce-text layout-{data.layout}">
 	<f:render partial="Header" arguments="{_all}" />
-	<f:format.html>{data.bodytext}</f:format.html>
+	<div class="content columns-{data.tx_ljtemplates_bodytext_columns}">
+		<f:format.html>{data.bodytext}</f:format.html>
+	</div>
 </div>
 
 </html>

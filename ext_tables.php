@@ -23,26 +23,51 @@ if (!defined('TYPO3_MODE')) {
 \FluidTYPO3\Flux\Core::registerProviderExtensionKey('lj_templates', 'Page');
 \FluidTYPO3\Flux\Core::registerProviderExtensionKey('lj_templates', 'Content');
 
-
 // Adding fields to pages TCA
-//$tmpCol = array(
-//	'tx_stuben_room_number' => array(
-//		'exclude' => 1,
-//		'label' => 'LLL:EXT:stuben/Resources/Private/Language/locallang_db.xlf:pages.tx_stuben_room_number',
-//		"config" => Array (
-//			"type" => "input",
-//			"size" => "20"
-//		)
-//	),
-//
+$tmpCol = array(
+
+	// add field bodytext_columns
+	'tx_ljtemplates_bodytext_columns' => array(
+		'exclude' => 1,
+		'label' => 'LLL:EXT:lj_templates/Resources/Private/Language/locallang_db.xlf:tt_content.tx_ljtemplates_bodytext_columns',
+		'config' => array(
+			'type' => 'select',
+			'renderType' => 'selectSingle',
+			'items' => array(
+				array(
+					'LLL:EXT:lj_templates/Resources/Private/Language/locallang_db.xlf:tt_content.tx_ljtemplates_bodytext_columns.I.1',
+					1
+				),
+				array(
+					'LLL:EXT:lj_templates/Resources/Private/Language/locallang_db.xlf:tt_content.tx_ljtemplates_bodytext_columns.I.2',
+					2
+				),
+				array(
+					'LLL:EXT:lj_templates/Resources/Private/Language/locallang_db.xlf:tt_content.tx_ljtemplates_bodytext_columns.I.3',
+					3
+				)
+			),
+			'default' => 1
+		)
+	),
+
+);
+
+// add bodytext_columns
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpCol, 1);
+
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+//	'tt_content',
+//	'visibility',
+//	'tx_examples_noprint',
+//	'after:linkToTop'
 //);
-//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tmpCol, 1);
-//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages_language_overlay', $tmpCol, 1);
 
-//t3lib_extMgm::addToAllTCAtypes('pages','tx_stuben_room_number', '' , 'after:title');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content','tx_ljtemplates_bodytext_columns', '' , 'after:bodytext');
 
-// add subheader to all tca types
+// add subheader to tca types
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content','subheader;;;;1-1-1', 'textpic', 'after:header');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content','subheader;;;;1-1-1', 'text', 'after:header');
 
 $GLOBALS['TCA']['sys_file_reference']['columns']['crop']['config'] = array(
 	'type' => 'imageManipulation',
