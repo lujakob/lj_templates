@@ -23,7 +23,10 @@ TCEFORM.tt_content {
 
     # disable fields
     #    size.disabled = 1
-
+    date.disabled = 1
+    rowDescription.disabled = 1
+    spaceBefore.disabled = 1
+    spaceAfter.disabled = 1
 }
 
 # add content elements to content wizard
