@@ -16,6 +16,13 @@
 				<source>dreispaltig</source>
 			</trans-unit>
 
+			<trans-unit id="tt_content.tx_ljtemplates_bodytext_right">
+				<source>Text rechts</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_ljtemplates_bodytext_left">
+				<source>Text links</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
