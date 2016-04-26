@@ -40,6 +40,7 @@ TCEFORM.tt_content {
 
 # backend record field default values
 TCAdefaults.tt_content {
+    # set images to 1 column per row
     imagecols = 1
 }
 
